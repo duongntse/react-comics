@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-comics/static/css/main.12d706c4.chunk.css",
-    "main.js": "/react-comics/static/js/main.c78a86a7.chunk.js",
-    "main.js.map": "/react-comics/static/js/main.c78a86a7.chunk.js.map",
+    "main.js": "/react-comics/static/js/main.a2b1ec15.chunk.js",
+    "main.js.map": "/react-comics/static/js/main.a2b1ec15.chunk.js.map",
     "runtime-main.js": "/react-comics/static/js/runtime-main.f460248b.js",
     "runtime-main.js.map": "/react-comics/static/js/runtime-main.f460248b.js.map",
     "static/css/2.1a02f21c.chunk.css": "/react-comics/static/css/2.1a02f21c.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.e87b7005.chunk.js",
     "static/css/main.12d706c4.chunk.css",
-    "static/js/main.c78a86a7.chunk.js"
+    "static/js/main.a2b1ec15.chunk.js"
   ]
 }
