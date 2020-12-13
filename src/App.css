@@ -1,3 +1,18 @@
 .header {
   text-align: center;
 }
+a.chapterNumberLink:visited {
+    color: #b8b8b8;
+    border: 1px solid #b8b8b8;
+}
+a.chapterNumberLink {
+    padding: .375rem .75rem;
+    border: 1px solid #0c50ce;
+    color: #0c50ce;
+}
+a.chapterNumberLink:hover {
+    padding: .375rem .75rem;
+    border: 1px solid #0c50ce;
+    background-color: #0c50ce;
+    color: #fff;
+}
