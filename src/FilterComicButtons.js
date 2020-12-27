@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Row from "react-bootstrap/Row";
+// import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
@@ -11,11 +11,7 @@ export class FilterComicButtons extends Component {
         return items.reduce((acc, curr) => {
             if (acc.length === 0) acc.push(curr);
             else {
-                if (
-                    !acc
-                        .map((a) => a.base_site_url)
-                        .includes(curr.base_site_url)
-                )
+                if (!acc.map((a) => a.website_url).includes(curr.website_url))
                     acc.push(curr);
             }
             return acc;
@@ -51,16 +47,16 @@ export class FilterComicButtons extends Component {
                 {this.retrieveComics(items).map((comic, ind) => (
                     <Button
                         className={`mx-1 my-1 ${
-                            siteName === comic.base_site_name ? "active" : ""
+                            siteName === comic.website_name ? "active" : ""
                         }`}
                         key={ind}
                         variant="outline-primary"
                         onClick={() => {
-                            this.props.onClick(comic.base_site_name);
-                            this.setState({ siteName: comic.base_site_name });
+                            this.props.onClick(comic.website_name);
+                            this.setState({ siteName: comic.website_name });
                         }}
                     >
-                        {comic.base_site_name}
+                        {comic.website_name}
                     </Button>
                 ))}
             </Col>

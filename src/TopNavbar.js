@@ -22,9 +22,9 @@ export class TopNavbar extends Component {
                         {"Alpha Comics"}
                     </Button>
                 </Link>
-                <Link className="ui item" to="/comics_beta">
+                <Link className="ui item" to="/beta_feature">
                     <Button className={"mx-1"} variant="outline-light">
-                        {"Beta Comics"}
+                        {"Beta Feature"}
                     </Button>
                 </Link>
             </Navbar>

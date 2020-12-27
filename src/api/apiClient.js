@@ -11,38 +11,23 @@ class Client {
     loadItems() {
         this.loadStatus = "IN_PROGRESS";
         return new Promise((resolve, reject) => {
-            fetch("items.json", {
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-            })
-                .then(this.checkStatus)
-                .then(this.parseJson)
-                .then((myJson) => {
-                    this.loadStatus = "COMPLETED";
-                    this.items = myJson;
-                    resolve(myJson);
-                });
-        });
-    }
-
-    loadBetaItems() {
-        this.loadStatus = "IN_PROGRESS";
-        return new Promise((resolve, reject) => {
-            fetch("beta_items.json", {
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-            })
-                .then(this.checkStatus)
-                .then(this.parseJson)
-                .then((myJson) => {
-                    this.loadStatus = "COMPLETED";
-                    this.betaItems = myJson;
-                    resolve(myJson);
-                });
+            try {
+                fetch("items.json", {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                })
+                    .then(this.checkStatus)
+                    .then(this.parseJson)
+                    .then((myJson) => {
+                        this.loadStatus = "COMPLETED";
+                        this.betaItems = myJson;
+                        resolve(myJson);
+                    });
+            } catch (error) {
+                reject(error);
+            }
         });
     }
 

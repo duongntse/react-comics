@@ -58,13 +58,13 @@ export class Footer extends Component {
                     <Col>
                         <h1>Comic Sites:</h1>
                         {items
-                            .reduce((acc, curr, currInd, arr) => {
+                            .reduce((acc, curr) => {
                                 if (acc.length === 0) acc.push(curr);
                                 else {
                                     if (
                                         !acc
-                                            .map((a) => a.base_site_url)
-                                            .includes(curr.base_site_url)
+                                            .map((a) => a.website_url)
+                                            .includes(curr.website_url)
                                     )
                                         acc.push(curr);
                                 }
@@ -76,9 +76,9 @@ export class Footer extends Component {
                                     key={ind}
                                     target="_blank"
                                     variant="outline-primary"
-                                    href={comic.base_site_url}
+                                    href={comic.website_url}
                                 >
-                                    {comic.base_site_name}
+                                    {comic.website_name}
                                 </Button>
                             ))}
                     </Col>

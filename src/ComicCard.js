@@ -162,7 +162,7 @@ export const ComicCard = (props) => {
                             Matthew is an interior designer living in New York.
                         </div> */}
                 </div>
-                {[latestChapterUI]}
+                {latestChapterUI}
                 <br />
                 {prevChapterUIs}
             </div>
