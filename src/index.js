@@ -1,15 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./App-2";
 import reportWebVitals from "./reportWebVitals";
 // Importing the Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./semantic-dist/semantic.min.css";
+import { BrowserRouter as Router } from "react-router-dom";
+
+// import moment from "moment";
+// import twix from "twix";
+// require("twix");
+// require("moment-precise-range-plugin");
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <Router>
+            <App />
+        </Router>
     </React.StrictMode>,
     document.getElementById("root")
 );

@@ -2,17 +2,21 @@
   text-align: center;
 }
 a.chapterNumberLink:visited {
-    color: #b8b8b8;
+    color: #b8b8b8 !important;
     border: 1px solid #b8b8b8;
+    background-color:  #ffffff;
 }
 a.chapterNumberLink {
     padding: .375rem .75rem;
     border: 1px solid #0c50ce;
     color: #0c50ce;
+
+    border: 1px solid #0c50ce;
+    color: #0c50ce !important;
 }
 a.chapterNumberLink:hover {
     padding: .375rem .75rem;
     border: 1px solid #0c50ce;
     background-color: #0c50ce;
-    color: #fff;
+    color: #ffffff !important;
 }
