@@ -4,14 +4,13 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.css";
 
 import PathCmdToBash from "./PathCmdToBash";
-import ComicChapters from "./ComicChapters";
+import ReduxComicChapters from "./ReduxComicChapters";
 import BetaFeature from "./BetaFeature";
 import Footer from "./Footer";
 import TopNavbar from "./TopNavbar";
 import NoMatch from "./NoMatch";
 
 export class App extends Component {
-    componentDidMount() {}
     render() {
         return (
             <div className="app">
@@ -28,7 +27,7 @@ export class App extends Component {
                             <Switch>
                                 <Route
                                     path="/comics_alpha"
-                                    component={ComicChapters}
+                                    component={ReduxComicChapters}
                                 />
                                 <Route
                                     path="/beta_feature"

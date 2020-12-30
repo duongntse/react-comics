@@ -10,6 +10,7 @@ class Client {
 
     loadItems() {
         this.loadStatus = "IN_PROGRESS";
+        console.log("Called loadItems()");
         return new Promise((resolve, reject) => {
             try {
                 fetch("items.json", {
@@ -23,6 +24,7 @@ class Client {
                     .then((myJson) => {
                         this.loadStatus = "COMPLETED";
                         this.betaItems = myJson;
+                        debugger;
                         resolve(myJson);
                     });
             } catch (error) {

@@ -7,7 +7,7 @@ export class TopNavbar extends Component {
     render() {
         return (
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#">
+                <Navbar.Brand href="/">
                     <img
                         alt=""
                         src="/harrygold_logo_ver4.svg"

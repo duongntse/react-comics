@@ -3,24 +3,46 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
 // Importing the Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./semantic-dist/semantic.min.css";
-import { BrowserRouter as Router } from "react-router-dom";
 
-// import moment from "moment";
-// import twix from "twix";
-// require("twix");
-// require("moment-precise-range-plugin");
+// Router
+import { BrowserRouter as Router, HashRouter } from "react-router-dom";
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-            <App />
-        </Router>
-    </React.StrictMode>,
-    document.getElementById("root")
-);
+// Redux + thunk
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunkMiddleware from "redux-thunk";
+import reducer from "./redux/reducers/reducer";
+// action
+import { fetchComics } from "./redux/actions/comicItemsActions";
+
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
+
+class Index extends React.Component {
+    componentDidMount() {
+        store.dispatch(fetchComics());
+        console.log("Called store.dispatch(fetchComics());");
+    }
+
+    render() {
+        return (
+            <React.StrictMode>
+                <Provider store={store}>
+                    {/* <Router> */}
+                    <HashRouter>
+                        <App />
+                    </HashRouter>
+                    {/* </Router> */}
+                </Provider>
+            </React.StrictMode>
+        );
+    }
+}
+
+ReactDOM.render(<Index />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
