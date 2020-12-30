@@ -146,9 +146,11 @@ export const ComicCard = (props) => {
                     <img src={cover_img} style={{ height: "410px" }} />
                 </div>
                 <div className="content">
-                    <div className="header">
+                    <div className="header" style={{ height: "47px" }}>
                         <a className="m-1" href={comic_url}>
-                            {comic_name}
+                            {_.truncate(comic_name, {
+                                length: 35,
+                            })}
                         </a>
                     </div>
                     <div className="meta">
