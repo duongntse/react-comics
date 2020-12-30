@@ -143,7 +143,7 @@ export const ComicCard = (props) => {
         <div className="ui link cards my-1">
             <div className="card">
                 <div className="image">
-                    <img src={cover_img} style={{ height: "410px" }} />
+                    <img src={cover_img} style={{ height: "280px" }} />
                 </div>
                 <div className="content">
                     <div className="header" style={{ height: "47px" }}>
