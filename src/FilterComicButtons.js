@@ -7,10 +7,6 @@ import Loader from "./Loader";
 export const FilterComicButtons = (props) => {
     const { comics, isLoading, filterBy } = props;
 
-    console.log(comics);
-    console.log(isLoading);
-    console.log(filterBy);
-
     const retrieveComics = (comics) => {
         return comics.reduce((acc, curr) => {
             if (acc.length === 0) acc.push(curr);
