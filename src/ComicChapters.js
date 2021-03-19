@@ -9,7 +9,7 @@ import Loader from "./Loader";
 import ComicCard from "./ComicCard";
 
 export const ComicChapters = (props) => {
-    const { isLoading, filteredSortedComics } = props;
+    const { isLoading, filteredSortedComics, fetchComics } = props;
     if (isLoading)
         return (
             <div className="container my-4">
@@ -19,13 +19,14 @@ export const ComicChapters = (props) => {
     return (
         <>
             <div className="container my-4">
+                <h1 className="text-center">Comic</h1>
                 <Row className="text-center py-4">
                     <div className="mt-4 ml-4">
                         <Countdown
                             hour={0}
                             minute={1}
                             second={30}
-                            callback={props.fetchComics}
+                            callback={fetchComics}
                         />
                     </div>
                 </Row>

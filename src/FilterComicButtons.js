@@ -7,7 +7,7 @@ import Loader from "./Loader";
 export const FilterComicButtons = (props) => {
     const { comics, isLoading, filterBy } = props;
 
-    const retrieveComics = (comics) => {
+    const getUniqueComics = (comics) => {
         return comics.reduce((acc, curr) => {
             if (acc.length === 0) acc.push(curr);
             else {
@@ -39,7 +39,7 @@ export const FilterComicButtons = (props) => {
             >
                 All
             </Button>
-            {retrieveComics(comics).map((comic, ind) => (
+            {getUniqueComics(comics).map((comic, ind) => (
                 <Button
                     key={ind}
                     className={`mx-1 my-1 ${

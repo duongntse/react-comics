@@ -99,45 +99,52 @@ export const ComicCard = (props) => {
         panda_chapters
     );
 
-    const latestChapterUI = (
-        <div className="text">
-            <div className="extra content">
-                <span className="right floated mr-1">
-                    {chapters[0].time ? Moment(chapters[0].time).fromNow() : ""}
-                </span>
-                <span>
-                    <a
-                        className="m-1 chapterNumberLink"
-                        href={chapters[0].link}
-                    >
-                        {_.truncate(chapters[0].text, {
-                            length: 20,
-                        })}
-                    </a>
-                </span>
-            </div>
-        </div>
-    );
+    let latestChapterUI, prevChapterUIs;
 
-    const prevChapterUIs = (
-        <div className="dropdown d-grid gap-2">
-            <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-            >
-                Previous Chapters
-            </button>
-            <ul
-                className="dropdown-menu w-100"
-                aria-labelledby="dropdownMenuButton"
-            >
-                <BootstrapTableChapters prevChapters={chapters.slice(1)} />
-            </ul>
-        </div>
-    );
+    if (chapters) {
+        latestChapterUI = (
+            <div className="text">
+                <div className="extra content">
+                    <span className="right floated mr-1">
+                        {chapters[0].time
+                            ? Moment(chapters[0].time).fromNow()
+                            : ""}
+                    </span>
+                    <span>
+                        <a
+                            className="m-1 chapterNumberLink"
+                            href={chapters[0].link}
+                        >
+                            {_.truncate(chapters[0].text, {
+                                length: 20,
+                            })}
+                        </a>
+                    </span>
+                </div>
+            </div>
+        );
+        prevChapterUIs = (
+            <div className="dropdown d-grid gap-2">
+                <button
+                    className="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    Previous Chapters
+                </button>
+                <ul
+                    className="dropdown-menu w-100"
+                    aria-labelledby="dropdownMenuButton"
+                >
+                    <BootstrapTableChapters prevChapters={chapters.slice(1)} />
+                </ul>
+            </div>
+        );
+    } else {
+        return <></>;
+    }
 
     return (
         <div className="ui link cards my-1">

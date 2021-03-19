@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { helper } from "./api/helper";
 import ComicChapters from "./ComicChapters";
-import { fetchComics } from "./redux/actions/comicItemsActions";
+import { fetchComics, getDirectItems } from "./redux/actions/comicItemsActions";
 import { cloneDeep } from "lodash";
 
 const filterByComicSiteName = (filterBy, comics) => {
@@ -34,6 +34,9 @@ function mapDispatchToProps(dispatch) {
     return {
         fetchComics: () => {
             dispatch(fetchComics());
+        },
+        getDirectItems: () => {
+            dispatch(getDirectItems());
         },
     };
 }

@@ -1,11 +1,17 @@
 /* eslint-disable prefer-template */
 /* eslint-disable import/prefer-default-export */
 import fetch from "isomorphic-fetch";
+
+const items = require("../assets/items.json");
 class Client {
     constructor() {
         this.items = [];
         this.betaItems = [];
         this.loadStatus = "INIT"; // INIT, IN_PROGRESS, COMPLETED
+    }
+
+    getDirectItems() {
+        return items;
     }
 
     loadItems() {
@@ -24,7 +30,7 @@ class Client {
                     .then((myJson) => {
                         this.loadStatus = "COMPLETED";
                         this.betaItems = myJson;
-                        debugger;
+                        // debugger;
                         resolve(myJson);
                     });
             } catch (error) {

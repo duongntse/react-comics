@@ -9,7 +9,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./semantic-dist/semantic.min.css";
 
 // Router
-import { BrowserRouter as Router, HashRouter } from "react-router-dom";
+import {
+    // BrowserRouter as Router,
+    HashRouter,
+} from "react-router-dom";
 
 // Redux + thunk
 import { createStore, applyMiddleware } from "redux";
@@ -17,14 +20,17 @@ import { Provider } from "react-redux";
 import thunkMiddleware from "redux-thunk";
 import reducer from "./redux/reducers/reducer";
 // action
-import { fetchComics } from "./redux/actions/comicItemsActions";
+import {
+    fetchComics,
+    // getDirectItems
+} from "./redux/actions/comicItemsActions";
 
 const store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 class Index extends React.Component {
     componentDidMount() {
         store.dispatch(fetchComics());
-        console.log("Called store.dispatch(fetchComics());");
+        // store.dispatch(getDirectItems());
     }
 
     render() {

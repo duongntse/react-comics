@@ -14,6 +14,12 @@ export function comicItemsReducer(state = initialState, action) {
                 isLoading: false,
             });
         }
+        case "GET_DIRECT_COMICS_SUCCESS": {
+            return Object.assign({}, state, {
+                comics: action.comics,
+                isLoading: false,
+            });
+        }
         default: {
             return state;
         }
